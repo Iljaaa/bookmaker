@@ -1,0 +1,217 @@
+2013/12/18 17:41:19 [bets] [Match] Balance 13 for bet 19 all ready exists. skipped.
+2013/12/18 17:42:31 [bets] [Match] New balance 14 cretated for bet 19, prize :10
+2013/12/18 17:42:31 [bets] [Match] User 1 balance updated.
+2013/12/18 17:58:43 [bets] [Match] Match 6 updating
+2013/12/18 17:58:43 [bets] [Match] Match 7 updating
+2013/12/18 17:58:43 [bets] [Match] Match 8 updating
+2013/12/18 17:58:43 [bets] [Match] Match 9 updating
+2013/12/18 17:58:43 [bets] [Match] Match 10 updating
+2013/12/18 17:58:43 [bets] [Match] Match 11 updating
+2013/12/18 17:58:43 [bets] [Match] Match 12 updating
+2013/12/18 17:58:43 [bets] [Match] Match 13 updating
+2013/12/18 17:58:43 [bets] [Match] Match 14 updating
+2013/12/18 17:58:43 [bets] [Match] Match 15 updating
+2013/12/18 17:58:43 [bets] [Match] Match 16 updating
+2013/12/18 17:58:43 [bets] [Match] Match 17 updating
+2013/12/18 17:58:43 [bets] [Match] Match 18 updating
+2013/12/18 17:58:43 [bets] [Match] Match 19 updating
+2013/12/18 17:58:43 [bets] [Match] Match 20 updating
+2013/12/18 17:58:43 [bets] [Match] Match 21 updating
+2013/12/18 17:58:43 [bets] [Match] Match 22 updating
+2013/12/18 17:58:43 [bets] [Match] Match 23 updating
+2013/12/18 17:58:43 [bets] [Match] Match 24 updating
+2013/12/18 17:58:43 [bets] [Match] Match 25 updating
+2013/12/18 17:58:43 [bets] [Match] Match 26 updating
+2013/12/18 17:58:43 [bets] [Match] Match 27 updating
+2013/12/18 17:58:43 [bets] [Match] Match 28 updating
+2013/12/18 17:58:43 [bets] [Match] Match 29 updating
+2013/12/18 17:58:43 [bets] [Match] Match 30 updating
+2013/12/18 17:58:43 [bets] [Match] Match 31 updating
+2013/12/18 17:58:43 [bets] [Match] Match 32 updating
+2013/12/18 17:58:43 [bets] [Match] Match 33 updating
+2013/12/18 17:58:43 [bets] [Match] Match 34 updating
+2013/12/18 17:58:43 [bets] [Match] Match 35 updating
+2013/12/18 17:58:43 [bets] [Match] Match 36 updating
+2013/12/18 17:58:43 [bets] [Match] Match 37 updating
+2013/12/18 17:58:43 [bets] [Match] Match 38 updating
+2013/12/18 17:58:43 [bets] [Match] Match 39 updating
+2013/12/18 17:58:43 [bets] [Match] Match 40 updating
+2013/12/18 19:20:01 [bets] [Match] Match 5 updating
+2013/12/18 20:20:07 [bets] [Match] Match 4 updating
+2013/12/18 21:20:02 [bets] [Match] Match 3 updating
+2013/12/18 21:20:02 [bets] [Match] New balance 3 cretated for bet 1, prize :20
+2013/12/18 21:20:02 [bets] [Match] User 2 balance updated.
+2013/12/18 21:20:02 [bets] [Match] Match 2 updating
+2013/12/18 22:20:01 [bets] [Match] Match 1 updating
+2013/12/18 22:20:01 [bets] [Match] New balance 4 cretated for bet 2, prize :10
+2013/12/18 22:20:01 [bets] [Match] User 1 balance updated.
+2013/12/19 07:20:02 [bets] [Match] Match 42 updating
+2013/12/19 07:20:02 [bets] [Match] Match 43 updating
+2013/12/19 07:20:02 [bets] [Match] Match 44 updating
+2013/12/19 13:12:57 [bets] [Match] Match 48 updating
+in /home/www/dota.allavtovo.ru/public_html/protected/models/Match.php (167)
+in /home/www/dota.allavtovo.ru/public_html/protected/controllers/MatchesController.php (125)
+in /home/www/dota.allavtovo.ru/public_html/index.php (14)
+2013/12/19 13:13:46 [bets] [Match] Match 46 updating
+in /home/www/dota.allavtovo.ru/public_html/protected/models/Match.php (167)
+in /home/www/dota.allavtovo.ru/public_html/protected/controllers/MatchesController.php (125)
+in /home/www/dota.allavtovo.ru/public_html/index.php (14)
+2013/12/19 13:13:46 [bets] [Match] New balance 5 cretated for bet 5, prize :90
+in /home/www/dota.allavtovo.ru/public_html/protected/models/Match.php (199)
+in /home/www/dota.allavtovo.ru/public_html/protected/controllers/MatchesController.php (125)
+in /home/www/dota.allavtovo.ru/public_html/index.php (14)
+2013/12/19 13:13:46 [bets] [Match] User 2 balance updated.
+in /home/www/dota.allavtovo.ru/public_html/protected/models/Match.php (208)
+in /home/www/dota.allavtovo.ru/public_html/protected/controllers/MatchesController.php (125)
+in /home/www/dota.allavtovo.ru/public_html/index.php (14)
+2013/12/19 17:20:07 [bets] [Match] Match 41 updating
+2013/12/19 18:20:01 [bets] [Match] Match 50 updating
+2013/12/19 20:20:07 [bets] [Match] Match 51 updating
+2013/12/19 22:20:07 [bets] [Match] Match 48 updating
+2013/12/19 22:20:07 [bets] [Match] Match 49 updating
+2013/12/19 22:20:07 [bets] [Match] New balance 6 cretated for bet 6, prize :10
+2013/12/19 22:20:07 [bets] [Match] User 1 balance updated.
+2013/12/21 00:20:03 [bets] [Match] Match 52 updating
+2013/12/21 01:20:07 [bets] [Match] Match 58 updating
+2013/12/21 22:20:02 [bets] [Match] Match 62 updating
+2013/12/21 23:20:02 [bets] [Match] Match 61 updating
+2013/12/21 23:20:02 [bets] [Match] New balance 7 cretated for bet 9, prize :50
+2013/12/21 23:20:02 [bets] [Match] User 2 balance updated.
+2013/12/22 01:20:06 [bets] [Match] Match 59 updating
+2013/12/22 01:20:06 [bets] [Match] Match 60 updating
+2013/12/22 16:20:07 [bets] [Match] Match 63 updating
+2013/12/22 20:20:02 [bets] [Match] Match 67 updating
+2013/12/22 21:20:07 [bets] [Match] Match 66 updating
+2013/12/22 22:20:02 [bets] [Match] Match 65 updating
+2013/12/22 23:20:04 [bets] [Match] Match 64 updating
+2013/12/23 00:20:12 [bets] [Match] Match 70 updating
+2013/12/23 01:20:01 [bets] [Match] Match 69 updating
+2013/12/23 02:20:07 [bets] [Match] Match 68 updating
+2013/12/23 21:20:02 [bets] [Match] Match 76 updating
+2013/12/23 23:20:07 [bets] [Match] Match 75 updating
+2013/12/24 00:20:06 [bets] [Match] Match 73 updating
+2013/12/24 03:20:01 [bets] [Match] Match 71 updating
+2013/12/24 03:20:01 [bets] [Match] Match 72 updating
+2013/12/24 04:20:02 [bets] [Match] Match 77 updating
+2013/12/26 11:12:38 [bets] [Match] Match 143 updating
+2013/12/31 12:22:35 [bets] [Match] Match 120 updating
+2013/12/31 12:22:35 [bets] [Match] Match 121 updating
+2013/12/31 12:22:35 [bets] [Match] Match 122 updating
+2013/12/31 12:22:35 [bets] [Match] Match 123 updating
+2013/12/31 12:22:35 [bets] [Match] Match 124 updating
+2013/12/31 12:22:35 [bets] [Match] Match 125 updating
+2013/12/31 12:22:35 [bets] [Match] Match 126 updating
+2013/12/31 12:22:35 [bets] [Match] Match 127 updating
+2013/12/31 12:22:35 [bets] [Match] Match 128 updating
+2013/12/31 12:22:35 [bets] [Match] Match 129 updating
+2013/12/31 12:22:35 [bets] [Match] Match 130 updating
+2013/12/31 12:22:35 [bets] [Match] Match 131 updating
+2013/12/31 12:22:35 [bets] [Match] Match 132 updating
+2013/12/31 12:22:35 [bets] [Match] Match 133 updating
+2013/12/31 12:22:35 [bets] [Match] Match 118 updating
+2014/01/02 14:06:18 [bets] [Match] Match 139 updating
+2014/01/02 14:06:18 [bets] [Match] Match 140 updating
+2014/01/02 14:06:18 [bets] [Match] Match 141 updating
+2014/01/02 14:06:18 [bets] [Match] Match 142 updating
+2014/01/02 14:06:18 [bets] [Match] Match 143 updating
+2014/01/02 14:06:18 [bets] [Match] Match 144 updating
+2014/01/02 14:06:18 [bets] [Match] Match 145 updating
+2014/01/02 14:06:18 [bets] [Match] Match 146 updating
+2014/01/02 14:06:18 [bets] [Match] Match 147 updating
+2014/01/02 14:06:18 [bets] [Match] Match 148 updating
+2014/01/02 14:06:19 [bets] [Match] Match 149 updating
+2014/01/02 14:06:19 [bets] [Match] Match 150 updating
+2014/01/02 14:06:19 [bets] [Match] Match 151 updating
+2014/01/02 14:06:19 [bets] [Match] Match 152 updating
+2014/01/02 14:06:19 [bets] [Match] Match 153 updating
+2014/01/02 14:06:19 [bets] [Match] Match 154 updating
+2014/01/02 14:06:19 [bets] [Match] Match 156 updating
+2014/01/02 14:06:19 [bets] [Match] Match 157 updating
+2014/01/02 14:06:19 [bets] [Match] Match 158 updating
+2014/01/02 14:06:19 [bets] [Match] Match 159 updating
+2014/01/02 14:06:19 [bets] [Match] Match 160 updating
+2014/01/02 14:06:19 [bets] [Match] Match 161 updating
+2014/01/02 14:06:19 [bets] [Match] Match 162 updating
+2014/01/02 14:06:19 [bets] [Match] Match 163 updating
+2014/01/02 14:06:19 [bets] [Match] Match 164 updating
+2014/01/02 14:06:19 [bets] [Match] Match 165 updating
+2014/01/02 14:06:19 [bets] [Match] Match 166 updating
+2014/01/02 14:06:19 [bets] [Match] Match 167 updating
+2014/01/02 14:06:19 [bets] [Match] Match 168 updating
+2014/01/02 14:06:19 [bets] [Match] Match 169 updating
+2014/01/02 14:06:19 [bets] [Match] Match 170 updating
+2014/01/02 14:06:19 [bets] [Match] Match 171 updating
+2014/01/02 14:06:19 [bets] [Match] Match 172 updating
+2014/01/02 14:06:19 [bets] [Match] Match 173 updating
+2014/01/02 14:06:19 [bets] [Match] Match 174 updating
+2014/01/02 14:26:02 [bets] [Match] Match 186 updating
+2014/01/02 14:26:02 [bets] [Match] Match 189 updating
+2014/01/02 14:26:02 [bets] [Match] Match 190 updating
+2014/01/04 10:01:52 [bets] [Match] Match 179 updating
+2014/01/04 10:01:52 [bets] [Match] Match 180 updating
+2014/01/04 10:01:52 [bets] [Match] Match 181 updating
+2014/01/04 10:01:52 [bets] [Match] Match 182 updating
+2014/01/04 10:01:52 [bets] [Match] Match 199 updating
+2014/01/04 10:01:52 [bets] [Match] Match 201 updating
+2014/01/04 10:01:53 [bets] [Match] Match 202 updating
+2014/01/04 10:06:09 [bets] [Match] Match 203 updating
+2014/01/04 10:06:09 [bets] [Match] Match 204 updating
+2014/01/04 10:06:10 [bets] [Match] Match 205 updating
+2014/01/04 10:06:10 [bets] [Match] Match 206 updating
+2014/01/04 10:06:10 [bets] [Match] Match 207 updating
+2014/01/04 10:06:10 [bets] [Match] Match 212 updating
+2014/01/04 10:06:11 [bets] [Match] Match 216 updating
+2014/01/04 10:06:11 [bets] [Match] Match 218 updating
+2014/01/04 10:06:11 [bets] [Match] Match 219 updating
+2014/01/04 10:06:11 [bets] [Match] Match 220 updating
+2014/01/04 10:06:11 [bets] [Match] Match 221 updating
+2014/01/04 10:26:58 [bets] [Match] Match 223 updating
+2014/01/04 10:26:58 [bets] [Match] Match 224 updating
+2014/01/04 10:26:58 [bets] [Match] Match 93 updating
+2014/01/05 18:23:54 [bets] [Match] Match 236 updating
+2014/01/05 18:23:54 [bets] [Match] Match 237 updating
+2014/01/05 18:23:55 [bets] [Match] Match 214 updating
+2014/01/05 18:23:55 [bets] [Match] Match 213 updating
+2014/01/05 18:23:55 [bets] [Match] Match 185 updating
+2014/01/05 18:23:55 [bets] [Match] Match 228 updating
+2014/01/05 18:23:55 [bets] [Match] Match 229 updating
+2014/01/05 18:23:55 [bets] [Match] Match 230 updating
+2014/01/05 18:24:03 [bets] [Match] Match 215 updating
+2014/01/05 18:24:03 [bets] [Match] Match 222 updating
+2014/01/05 18:24:04 [bets] [Match] Match 238 updating
+2014/01/05 18:24:04 [bets] [Match] Match 239 updating
+2014/01/05 18:24:04 [bets] [Match] Match 240 updating
+2014/01/19 06:59:46 [bets] [Match] Match 244 updating
+2014/01/19 06:59:46 [bets] [Match] Match 245 updating
+2014/01/19 06:59:46 [bets] [Match] Match 246 updating
+2014/01/19 06:59:46 [bets] [Match] Match 247 updating
+2014/01/19 06:59:47 [bets] [Match] Match 248 updating
+2014/01/19 06:59:47 [bets] [Match] Match 249 updating
+2014/01/19 06:59:47 [bets] [Match] Match 250 updating
+2014/01/19 06:59:47 [bets] [Match] Match 251 updating
+2014/01/19 06:59:47 [bets] [Match] Match 252 updating
+2014/01/19 06:59:47 [bets] [Match] Match 253 updating
+2014/01/19 06:59:47 [bets] [Match] Match 254 updating
+2014/01/19 06:59:48 [bets] [Match] Match 255 updating
+2014/01/19 06:59:48 [bets] [Match] Match 256 updating
+2014/01/19 06:59:48 [bets] [Match] Match 257 updating
+2014/01/19 06:59:48 [bets] [Match] Match 258 updating
+2014/01/19 06:59:48 [bets] [Match] Match 259 updating
+2014/01/19 06:59:48 [bets] [Match] Match 260 updating
+2014/01/19 06:59:49 [bets] [Match] Match 261 updating
+2014/01/19 08:39:25 [bets] [Match] Match 262 updating
+2014/01/19 08:39:25 [bets] [Match] Match 263 updating
+2014/01/19 08:39:26 [bets] [Match] Match 264 updating
+2014/01/19 08:39:26 [bets] [Match] Match 265 updating
+2014/01/19 08:39:26 [bets] [Match] Match 266 updating
+2014/01/19 08:39:26 [bets] [Match] Match 267 updating
+2014/01/19 08:39:26 [bets] [Match] Match 268 updating
+2014/01/19 08:39:27 [bets] [Match] Match 269 updating
+2014/01/19 08:39:27 [bets] [Match] Match 270 updating
+2014/01/19 08:39:27 [bets] [Match] Match 271 updating
+2014/01/19 08:39:27 [bets] [Match] Match 272 updating
+2014/01/19 08:42:27 [bets] [Match] Match 273 updating
+2014/01/19 08:42:27 [bets] [Match] Match 274 updating
+2014/01/19 08:42:28 [bets] [Match] Match 275 updating
+2014/01/19 08:42:28 [bets] [Match] Match 276 updating
+2014/01/19 08:42:28 [bets] [Match] Match 277 updating
