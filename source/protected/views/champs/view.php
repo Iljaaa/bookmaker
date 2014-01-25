@@ -12,7 +12,6 @@ if (is_array($flash) && count($flash) > 0) : ?>
 	</div>
 <?php endif; ?>
 
-
 <?php if ($champ->description != "") : ?>
 <div>
 	<?=yii::app()->wiky->parse($champ->description); ?>

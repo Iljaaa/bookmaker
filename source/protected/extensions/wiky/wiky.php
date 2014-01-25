@@ -26,7 +26,7 @@ class wiky
 
         // Special
         "/^----+(\s*)$/m",                                                // Horizontal line
-        "/\[\[(file|img):((ht|f)tp(s?):\/\/(.+?))( (.+))*\]\]/i",        // (File|img):(http|https|ftp) aka image
+        "/\[\[(file|img):((ht|f)tp(s?):\/\/(.+?))(\|(.+))*\]\]/i",        // (File|img):(http|https|ftp) aka image
         "/\[((news|(ht|f)tp(s?)|irc):\/\/(.+?))( (.+))\]/i",                // Other urls with text
         "/\[((news|(ht|f)tp(s?)|irc):\/\/(.+?))\]/i",                        // Other urls without text
 
@@ -54,6 +54,7 @@ class wiky
         // Newlines (TODO: make it smarter and so that it groupd paragraphs)
         "/^(?!<li|dd).+(?=(<a|strong|em|img)).+$/mi",                        // Ones with breakable elements (TODO: Fix this crap, the li|dd comparison here is just stupid)
         "/^[^><\n\r]+$/m",                                                // Ones with no elements
+        "/^[^><\n]+$/m",                                                    // Ones with no elements
     );
 
 	private $replacements = array (
@@ -97,6 +98,7 @@ class wiky
 		// Newlines
 		"$0<br/>",
 		"$0<br/>",
+        "$0<br/>",
 	);
 
 	public function init () {
@@ -108,6 +110,8 @@ class wiky
 	}
 
     public function parse($input) {
+        yii::app()->firephp->log($input);
+
         if(!empty($input)) $output=preg_replace($this->patterns,$this->replacements,$input);
         else $output = false;
         return $output;

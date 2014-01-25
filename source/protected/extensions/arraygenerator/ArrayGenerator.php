@@ -24,6 +24,7 @@ class ArrayGenerator
 	 */
 	public static function saveToFile ($filePath, $data)
 	{
+        if (!is_writable($filePath)) return false;
 		return file_put_contents($filePath, self::generateDataContent($data));
 	}
 

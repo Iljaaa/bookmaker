@@ -58,4 +58,6 @@ $this->breadcrumbs=array(
 	<?=CHtml::submitButton('Save', array('class' => 'f-bu f-bu-default')) ?>
 </div>
 
-<?=CHtml::endForm();
+<?=CHtml::endForm(); ?>
+
+<?=$this->renderPartial('/site/pages/wiky_markup_help') ?>
