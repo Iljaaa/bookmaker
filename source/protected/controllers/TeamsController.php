@@ -61,6 +61,7 @@ class TeamsController extends Controller {
 				$t = new Team ();
 				$t->name = $model->name;
 				$t->shortname = $model->shortname;
+                $t->description = $model->description;
 				$t->save();
 
 				if ($t->id > 0) {
