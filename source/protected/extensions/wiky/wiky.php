@@ -112,8 +112,58 @@ class wiky
     public function parse($input) {
         yii::app()->firephp->log($input);
 
-        if(!empty($input)) $output=preg_replace($this->patterns,$this->replacements,$input);
-        else $output = false;
+        if(!empty($input))
+        {
+	        // все правила
+	        $output = preg_replace($this->patterns,$this->replacements, $input);
+
+	        // картинки
+	        $output = $this->parseImages($output);
+        }
+        else {
+	        $output = false;
+        }
+
         return $output;
     }
+
+	/**
+	 * Парсинг картинок
+	 *
+	 * @param $input
+	 */
+	protected function parseImages ($input)
+	{
+		$matches = array();
+		preg_match_all("/\[{1}(img)\|(.*)\]{1}/i", $input, $matches);
+
+		if (count($matches[0]) == 0) return $input;
+
+		foreach ($matches[0] as $index => $match)
+		{
+			$data = '';
+			if (isset($matches[2][$index])) $data = $matches[2][$index];
+			if ($data == '') continue;
+
+			$str4replace = '<img ';
+
+			$parts = explode('|', $data);
+			if ($parts[0] == '') continue;
+
+			$str4replace .= ' src="'.$parts[0].'"';
+
+			if (isset($parts[1]) && $parts[1] != ''){
+				$str4replace .= ' alt="'.$parts[1].'"';
+			}
+
+			$str4replace .= ' />';
+
+			$input = str_replace($match, $str4replace, $input);
+		}
+
+
+		yii::app()->firephp->log ($matches, 'matches');
+		return $input;
+	}
+
 }
