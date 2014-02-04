@@ -47,8 +47,6 @@ class UsersController extends Controller
 	 */
 	public function actionRegistration ()
 	{
-
-
 		$model = new RegistrationForm();
 
 		// проверяем форму регистрации
@@ -57,7 +55,18 @@ class UsersController extends Controller
 			$model->attributes = $_POST['RegistrationForm'];
 
 			if ($model->validate()) {
-				User::addUserByRegistrationModel ($model);
+				$user = User::addUserByRegistrationModel ($model);
+                if ($user->id == 0) throw new Exception ("User creation error");
+
+                $message = $this->renderPartial('/emails/'.yii::app()->language.'/registration_complite', array (
+                    'user' => $user
+                ));
+
+                $headers = "MIME-Version: 1.0\r\n";
+                $headers .= "Content-type: text/html; charset=utf-8\r\n";
+                $headers .= "From: robot <noreply@".$_SERVER["HTTP_HOST"].">\r\n";
+
+                mail ($user->email, yii::t('user_registration', 'Registration complete'), $message, $headers);
 
 				$url = $this->createUrl('/users/registrationcomplite');
 				$this->redirect($url);
@@ -72,6 +81,7 @@ class UsersController extends Controller
 		$this->render('registration', $data);
 	}
 
+
 	/**
 	 *
 	 */
@@ -79,6 +89,15 @@ class UsersController extends Controller
 	{
 		$this->render ('registratuioncomplite');
 	}
+
+    /**
+     * FIXIT: make view
+     *
+     */
+    public function actionRegistrationcompare()
+    {
+        $this->render ('registrationcompare');
+    }
 
 	/**
 	 * Данные пользователя

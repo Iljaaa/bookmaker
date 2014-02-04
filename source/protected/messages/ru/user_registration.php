@@ -33,4 +33,6 @@ return array(
     'Url to old' => 'Урл адрес устарел',
     'Wrong url' => 'Урл адрес не верный',
     'User who send request not found' => 'Пользователь указанный в запросе не найден',
+
+    'Registration complete' => 'Подтверждение регистрации'
 );
