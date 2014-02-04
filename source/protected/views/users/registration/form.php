@@ -23,13 +23,13 @@
 		if (pwd.length==0) {
 			return '';
 		} else if (false == enoughRegex.test(pwd)) {
-			return 'Password to short';
+			return '<?=yii::t('user_registration', 'Password to short'); ?>';
 		} else if (strongRegex.test(pwd)) {
-			return '<span style="color:green">Strong</span>';
+			return '<span style="color:green"><?=yii::t('main', 'Strong'); ?></span>';
 		} else if (mediumRegex.test(pwd)) {
-			return '<span style="color:orange">Medium</span>';
+			return '<span style="color:orange"><?=yii::t('main', 'Medium'); ?></span>';
 		} else {
-			return '<span style="color:red">Weak</span>';
+			return '<span style="color:red"><?=yii::t('main', 'Weak'); ?></span>';
 		}
 	}
 
@@ -58,7 +58,7 @@
 		<?=CHtml::activeTextField($model, 'name', array('maxlength' => 128, 'class'=>'g-4')) ?>
 		<?=CHtml::error($model, "name"); ?>
 		<span class="f-input-comment">
-			You login on system
+            <?=yii::t('user_registration', 'You login on system'); ?>
 		</span>
 	</div>
 
@@ -71,7 +71,7 @@
 		<?=CHtml::activeTextField($model, 'email', array('maxlength' => 128, 'class'=>'g-4')) ?>
 		<?=CHtml::error($model, "email"); ?>
 		<span class="f-input-comment">
-			Using for restore personal data and get notifications
+            <?=yii::t('user_registration', 'Using for restore personal data and get notifications'); ?>
 		</span>
 	</div>
 </div>
@@ -84,7 +84,7 @@
 		<span id="password-strange"></span>
 		<?=CHtml::error($model, "password"); ?>
 		<span class="f-input-comment">
-			Min 4 symbols, best 6 symbols
+			<?=yii::t('user_registration', 'Min 4 symbols, best 6 symbols'); ?>
 		</span>
 	</div>
 
@@ -114,7 +114,7 @@
 
 <div class="f-row">
 	<div class="f-actions">
-		<?=CHtml::submitButton('Registration', array('class'=>'f-bu f-bu-success')); ?>
+		<?=CHtml::submitButton(yii::t('user_registration', 'Registration'), array('class'=>'f-bu f-bu-success')); ?>
 	</div>
 </div>
 
