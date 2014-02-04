@@ -48,7 +48,7 @@
 						<li><a href="<?=$this->createUrl('/matches') ?>">Mathes</a></li>
 						<li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
 						<li><a href="<?=$this->createUrl('/site/contact') ?>">Contact</a></li>
-						<li><a href="<?=$this->createUrl('/site/page', array ('view'=>'about')) ?>">About</a></li>
+						<li><a href="<?=$this->createUrl('/site/about') ?>">About</a></li>
 						<li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
 						<?php if (Yii::app()->user->isGuest) : ?>
 							<li><a href="<?=$this->createUrl('/site/login') ?>">Login</a></li>

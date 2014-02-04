@@ -9,6 +9,8 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Dota 2 bookmaker prototype',
 	'timeZone' => 'Europe/Madrid',
+    'sourceLanguage'=>'en',
+    'language'=>'ru',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -42,24 +44,28 @@ return array(
 		// uncomment the following to enable URLs in path-format
 
 		'urlManager'=>array(
+            'class'             => 'UrlManager',
 			'urlFormat'         =>'path',
 			'showScriptName'	=> false,
 			'rules'=>array(
-				'champ/<id:\d+>'            => 'champs/view',
-				'champ/<id:\d+>/edit'       => 'champs/edit',
+                '/<language:(ru|ua|en)>/champs'                    => 'champs/index',
+				'/<language:(ru|ua|en)>/champ/<id:\d+>'            => 'champs/view',
+				'/<language:(ru|ua|en)>/champ/<id:\d+>/edit'       => 'champs/edit',
 
-				'team/<id:\d+>/edit'        => 'teams/edit',
+                '/<language:(ru|ua|en)>/teams'                     => 'teams/index',
+				'/<language:(ru|ua|en)>/team/<id:\d+>/edit'        => 'teams/edit',
 
-				'match/<id:\d+>'            => 'matches/view',
-				'match/<match:\d+>/bet'     => 'bets/add',
-				'match/<match:\d+>/delete'  => 'matches/delete',
-				'match/<match:\d+>/result'   => 'matches/result',
+                '/<language:(ru|ua|en)>/matches'                    => 'matches/index',
+				'/<language:(ru|ua|en)>/match/<id:\d+>'            => 'matches/view',
+				'/<language:(ru|ua|en)>/match/<match:\d+>/bet'     => 'bets/add',
+				'/<language:(ru|ua|en)>/match/<match:\d+>/delete'  => 'matches/delete',
+				'/<language:(ru|ua|en)>/match/<match:\d+>/result'   => 'matches/result',
 
-				'mybets'                    => 'bets/user',
+				'/<language:(ru|ua|en)>/mybets'                    => 'bets/user',
 
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+				'/<language:(ru|ua|en)>/<controller:\w+>/<id:\d+>'=>'<controller>/view',
+				'/<language:(ru|ua|en)>/<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+				'/<language:(ru|ua|en)>/<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
 
@@ -101,5 +107,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'vangel@yandex.ru',
+        'languages'=>array('ru'=>'Русский', 'ua'=>'Українська', 'en'=>'English'),
 	),
 );
