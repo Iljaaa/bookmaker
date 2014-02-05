@@ -53,23 +53,6 @@ class RegistrationForm extends CFormModel
 	}
 
 	
-	public function validateCode ($params = array(), $attrs = array()) 
-	{
-		$delta = time() - $this->time;
-				
-		$freeDays = (3600 * 24) * 3;
-		
-		if ($delta > $freeDays) {
-			$this->addError('code', yii::t('user_registration', 'Url to old'));
-			return;
-		}
-		
-		$valid = WebUser::validRegistrationKey($this->code, $this->email, $this->owner_id, $this->time);
-		if (!$valid) {
-			$this->addError('code', yii::t('user_registration', 'Wrong url'));
-		} 
-	}
-	
 	public function validateOwnerExist ($params = array(), $attrs = array()) 
 	{
 		$user = User::model()->findByPk ($this->owner_id);

@@ -40,8 +40,9 @@ class User extends CActiveRecord
 		$u->email			= $model->email;
 		$u->password 		= WebUser::hashPassword($model->password);
 
-		$u->status 			= 'worked';
+		$u->status 			= 'new';
 		$u->last_activity 	= time();
+		$u->regisrtime      = time();
 		$u->balance = 0;
 
 		$u->save();
@@ -113,20 +114,20 @@ class User extends CActiveRecord
 
     /**
      * Url for compare registration
-     * FIXIT: insert user registration date
      *
      */
     public function getRegistrationCompareUrl () {
-        return 'http://'.$_SERVER['HTTP_HOST'].'/users/registrationcompare/?date='.date('dmY').'&id='.$this->id.'&code='.$this->getRegistrationCode();
+	    $date = date('Y-m-d H:i:s', $this->regisrtime);
+	    $date = urlencode($date);
+        return 'http://'.$_SERVER['HTTP_HOST'].'/users/confirmregistration/?date='.$date.'&id='.$this->id.'&code='.$this->getRegistrationCode();
     }
 
     /**
      * registratin compare code
-     * FIXIT: insert user registration date
      *
      */
     protected function getRegistrationCode (){
-        $str = date('dmY')."-".$this->login.'-'.$this->id;
+        $str = date('dmY', $this->regisrtime)."-".$this->login.'-'.$this->id;
         return md5($str);
     }
 

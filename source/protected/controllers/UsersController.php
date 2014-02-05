@@ -60,7 +60,7 @@ class UsersController extends Controller
 
                 $message = $this->renderPartial('/emails/'.yii::app()->language.'/registration_complite', array (
                     'user' => $user
-                ));
+                ), true);
 
                 $headers = "MIME-Version: 1.0\r\n";
                 $headers .= "Content-type: text/html; charset=utf-8\r\n";
@@ -69,6 +69,7 @@ class UsersController extends Controller
                 mail ($user->email, yii::t('user_registration', 'Registration complete'), $message, $headers);
 
 				$url = $this->createUrl('/users/registrationcomplite');
+				ob_clean();
 				$this->redirect($url);
 			}
 
@@ -87,6 +88,12 @@ class UsersController extends Controller
 	 */
 	public function actionRegistrationcomplite()
 	{
+		$user =User::model()->findByPk(5);
+		echo $this->renderPartial('/emails/'.yii::app()->language.'/registration_complite', array (
+				'user' => $user
+			), true);
+
+
 		$this->render ('registratuioncomplite');
 	}
 
@@ -94,9 +101,41 @@ class UsersController extends Controller
      * FIXIT: make view
      *
      */
-    public function actionRegistrationcompare()
+    public function actionConfirmregistration ()
     {
-        $this->render ('registrationcompare');
+	    $data = array (
+		    'errorMessage' => '',
+		    'goodMessage' => '',
+	    );
+
+	    $date = yii::app()->getRequest()->getParam('date', '');
+	    yii::app()->firephp->log ($date, 'date');
+	    $dt = date_parse($date);
+	    yii::app()->firephp->log ($dt, 'dt');
+
+	    $var = (
+		    isset($dt['error_count'])
+	        && $dt['error_count'] == 0
+		    && isset($dt['warning_count'])
+		    && $dt['warning_count'] == 0
+	    );
+	    if (!$var){
+			$data['errorMessage'] = yii::t('user_registration', 'Wrong url').' [0]';
+	    }
+
+	    // проверяем время жизни ссылки
+	    $time = mktime ($dt['hour'], $dt['minute'], $dt['second'], $dt['month'], $dt['day'], $dt['year']);
+	    $delta = time() - $time;
+
+	    if ($delta > (3600 * 24 * 3)) {
+		    $data['errorMessage'] = yii::t('user_registration', 'Registration confirmed');
+	    }
+
+
+	    $data['goodMessage'] = yii::t('user_registration', 'Registration confirmed');
+
+
+	    $this->render ('confirmregistration', $data);
     }
 
 	/**

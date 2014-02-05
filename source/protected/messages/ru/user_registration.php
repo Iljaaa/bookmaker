@@ -15,7 +15,7 @@ return array(
     'You login on system' => 'Ваш логин в системе',
     'Using for restore personal data and get notifications' => 'Для восстановления пароля и получения уведомлений',
     'Min 4 symbols, best 6 symbols' => 'Минимум 4 символа, оптимально 6',
-    'Registration' => 'Зарегистрироваться',
+    'Registration' => 'Регистрация',
 
     'Name not set' => 'Login не указан',
     'Name to short' => 'Login не введен',
@@ -34,5 +34,8 @@ return array(
     'Wrong url' => 'Урл адрес не верный',
     'User who send request not found' => 'Пользователь указанный в запросе не найден',
 
-    'Registration complete' => 'Подтверждение регистрации'
+    'Registration complete' => 'Подтверждение регистрации',
+	'Registration is completed' => 'Регистрация завершена',
+	'Confirm registration' => 'Подтверждение регистрации',
+	'Registration confirmed' => 'Регистрация подтверждена',
 );
