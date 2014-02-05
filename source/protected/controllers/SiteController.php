@@ -67,7 +67,11 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        $this->render('pages/about');
+        $this->render('pages/'.yii::app()->language.'/about');
+    }
+
+    public function actionRules (){
+        $this->render('pages/'.yii::app()->language.'/rules');
     }
 
 	/**
