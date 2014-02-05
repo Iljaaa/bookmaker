@@ -85,14 +85,7 @@ class UsersController extends Controller
 	/**
 	 *
 	 */
-	public function actionRegistrationcomplite()
-	{
-		$user =User::model()->findByPk(6);
-		echo $this->renderPartial('/emails/'.yii::app()->language.'/registration_complite', array (
-				'user' => $user
-			), true);
-
-
+	public function actionRegistrationcomplite() {
 		$this->render ('registratuioncomplite');
 	}
 
