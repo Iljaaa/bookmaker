@@ -39,5 +39,6 @@ return array(
 	'Confirm registration' => 'Подтверждение регистрации',
 	'Registration confirmed' => 'Регистрация подтверждена',
     'User not found' => 'Пользователь не найден',
-    'User status wrong status' => 'Не вернеый статус пользователя'
+    'User status wrong status' => 'Не вернеый статус пользователя',
+    'Terms not confirmed' => 'Пользовательское соглашение не подтверждено',
 );

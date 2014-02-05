@@ -113,6 +113,19 @@
 <?php endif; ?>
 
 <div class="f-row">
+
+    <div class="f-input">
+
+            <?=CHtml::activeCheckBox($model, 'terms'); ?>
+            <label for="RegistrationForm_terms"> <?=yii::t('user_registration', 'I agree with the terms of this agreement'); ?>
+        </label>
+
+        <a href="<?=$this->createUrl('/site/rules') ?>"><?=yii::t('user_registration', 'Terms'); ?></a>
+        <?=CHtml::error($model, "terms"); ?>
+    </div>
+</div>
+
+<div class="f-row">
 	<div class="f-actions">
 		<?=CHtml::submitButton(yii::t('user_registration', 'Registration'), array('class'=>'f-bu f-bu-success')); ?>
 	</div>

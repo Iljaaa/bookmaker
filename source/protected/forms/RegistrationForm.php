@@ -9,6 +9,7 @@ class RegistrationForm extends CFormModel
 	public $password_confirm;
 
 	public $verifyCode;
+    public $terms;
 	
 	/**
 	 * Declares the validation rules.
@@ -29,6 +30,8 @@ class RegistrationForm extends CFormModel
 			array('password', 'compare', 'compareAttribute'=>'password_confirm', 'message' => yii::t('user_registration', 'Passwords do not match')),
 				
 			array('password_confirm', 'required', 'message' => yii::t('user_registration', 'Password confirm not set')),
+
+            array('terms', 'required', 'requiredValue'=>true, 'message' => yii::t('user_registration', 'Terms not confirmed')),
 
 			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 		);
