@@ -41,4 +41,6 @@ return array(
     'User not found' => 'Пользователь не найден',
     'User status wrong status' => 'Не вернеый статус пользователя',
     'Terms not confirmed' => 'Пользовательское соглашение не подтверждено',
+    'I agree with the terms of this agreement' => 'Я согласен с условиями пользовательского соглашения',
+
 );

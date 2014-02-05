@@ -120,7 +120,7 @@
             <label for="RegistrationForm_terms"> <?=yii::t('user_registration', 'I agree with the terms of this agreement'); ?>
         </label>
 
-        <a href="<?=$this->createUrl('/site/rules') ?>"><?=yii::t('user_registration', 'Terms'); ?></a>
+        <a href="<?=$this->createUrl('/site/rules') ?>"><?=yii::t('main', 'Terms'); ?></a>
         <?=CHtml::error($model, "terms"); ?>
     </div>
 </div>
