@@ -11,6 +11,13 @@ $this->breadcrumbs[yii::t('user_registration', 'Confirm registration')] = $this-
 	<div class="f-message f-message-success">
 		<?=yii::t('user_registration', $goodMessage); ?>
 	</div>
+
+    <?php if (yii::app()->language == 'ru') : ?>
+        <p>Вы можете авторизоваться на сайте с использованием логина и пароля указанных при регистрации</p>
+    <?php else : ?>
+        <p>You can login using your login and password specified at registration</p>
+    <?php endif; ?>
+
 <?php endif; ?>
 
 
@@ -19,3 +26,4 @@ $this->breadcrumbs[yii::t('user_registration', 'Confirm registration')] = $this-
 	<?=yii::t('user_registration', $errorMessage); ?>
 </div>
 <?php endif; ?>
+

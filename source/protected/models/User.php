@@ -142,6 +142,15 @@ class User extends CActiveRecord
         return ($code == $code4compare);
     }
 
+    /**
+     * Подтверждение регистрации пользователя
+     *
+     */
+    public function registrationConfirm (){
+        $this->status = 'worked';
+        $this->save();
+    }
+
 	/**
 	 * Поиск по строке
 	 *

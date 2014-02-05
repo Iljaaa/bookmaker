@@ -38,4 +38,6 @@ return array(
 	'Registration is completed' => 'Регистрация завершена',
 	'Confirm registration' => 'Подтверждение регистрации',
 	'Registration confirmed' => 'Регистрация подтверждена',
+    'User not found' => 'Пользователь не найден',
+    'User status wrong status' => 'Не вернеый статус пользователя'
 );

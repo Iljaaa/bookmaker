@@ -69,7 +69,6 @@ class UsersController extends Controller
                 mail ($user->email, yii::t('user_registration', 'Registration complete'), $message, $headers);
 
 				$url = $this->createUrl('/users/registrationcomplite');
-				ob_clean();
 				$this->redirect($url);
 			}
 
@@ -88,7 +87,7 @@ class UsersController extends Controller
 	 */
 	public function actionRegistrationcomplite()
 	{
-		$user =User::model()->findByPk(5);
+		$user =User::model()->findByPk(6);
 		echo $this->renderPartial('/emails/'.yii::app()->language.'/registration_complite', array (
 				'user' => $user
 			), true);
@@ -109,10 +108,9 @@ class UsersController extends Controller
 	    );
 
 	    $date = yii::app()->getRequest()->getParam('date', '');
-	    yii::app()->firephp->log ($date, 'date');
-	    $dt = date_parse($date);
-	    yii::app()->firephp->log ($dt, 'dt');
+	    if ($date == '') $data['errorMessage'] = yii::t('user_registration', 'Wrong url');
 
+	    $dt = date_parse($date);
 	    $var = (
 		    isset($dt['error_count'])
 	        && $dt['error_count'] == 0
@@ -120,7 +118,7 @@ class UsersController extends Controller
 		    && $dt['warning_count'] == 0
 	    );
 	    if (!$var){
-			$data['errorMessage'] = yii::t('user_registration', 'Wrong url').' [0]';
+			$data['errorMessage'] = yii::t('user_registration', 'Wrong url').' [1]';
 	    }
 
 	    // проверяем время жизни ссылки
@@ -128,12 +126,36 @@ class UsersController extends Controller
 	    $delta = time() - $time;
 
 	    if ($delta > (3600 * 24 * 3)) {
-		    $data['errorMessage'] = yii::t('user_registration', 'Registration confirmed');
+		    $data['errorMessage'] = yii::t('user_registration', 'Url to old');
 	    }
 
+        // checking code exists
+        $code = yii::app()->getRequest()->getParam('code', '');
+        if ($code == '') $data['errorMessage'] = yii::t('user_registration', 'Wrong url').' [2]';
+        yii::app()->firephp->log ($code, '$code');
 
-	    $data['goodMessage'] = yii::t('user_registration', 'Registration confirmed');
+        // chking user
+        $userId = yii::app()->getRequest()->getParam('id', 0);
+        if ($userId == 0) $data['errorMessage'] = yii::t('user_registration', 'User not found');
 
+        $user = User::model()->findByPk($userId);
+        if ($user == null) $data['errorMessage'] = yii::t('user_registration', 'User not found').' [1]';
+
+        // checking code
+        if (!$user->compareRegistrationCode($code)){
+            $data['errorMessage'] = yii::t('user_registration', 'Wrong url').' [3]';
+        }
+
+        // checking user
+        if ($user->status != 'new') {
+            $data['errorMessage'] = yii::t('user_registration', 'User status wrong status');
+        }
+
+        // all ok
+        if ($data['errorMessage'] == '') {
+            $user->registrationConfirm();
+            $data['goodMessage'] = yii::t('user_registration', 'Registration confirmed');
+        }
 
 	    $this->render ('confirmregistration', $data);
     }
