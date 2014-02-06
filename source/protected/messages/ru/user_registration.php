@@ -43,4 +43,7 @@ return array(
     'Terms not confirmed' => 'Пользовательское соглашение не подтверждено',
     'I agree with the terms of this agreement' => 'Я согласен с условиями пользовательского соглашения',
 
+	'Restore password' => 'Восстановление пароля',
+	'New password send to email' => 'Новый пароль отправлен на почту'
+
 );

@@ -1,5 +1,6 @@
 <?php
 
+
 class User extends CActiveRecord
 {
 	/**
@@ -9,7 +10,11 @@ class User extends CActiveRecord
 	 */
 	private $primaryKey = 'id';
 
-
+	/**
+	 *
+	 * @param string $className
+	 * @return CActiveRecord
+	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -150,6 +155,16 @@ class User extends CActiveRecord
         $this->status = 'worked';
         $this->save();
     }
+
+	/**
+	 * Устанавливаем паролья для пользователя
+	 *
+	 * @param $newPassword
+	 */
+	public function setPassword ($newPassword) {
+		$this->password = UserIdentity::getPassowrdHash($newPassword);
+		$this->save ();
+	}
 
 	/**
 	 * Поиск по строке

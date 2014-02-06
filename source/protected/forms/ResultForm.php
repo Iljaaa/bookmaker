@@ -6,7 +6,7 @@
  * Time: 11:19
  */
 
-class ResultForm  extends CFormModel
+class ResultForm extends CFormModel
 {
 	public $matchId;
 

@@ -4,14 +4,14 @@
 /* @var $form CActiveForm  */
 
 $this->pageTitle=Yii::app()->name . ' - Login';
-$this->breadcrumbs=array(
-	'Login',
-);
+$this->breadcrumbs=array('Login');
 ?>
 
 <h1>Login</h1>
 
 <p>Please fill out the following form with your login credentials:</p>
+
+<p>Forgot password. <a href="<?=$this->createUrl('/users/restorepassword') ?>">Restore</a></p>
 
 <p class="note">Fields with <span class="required">*</span> are required.</p>
 
