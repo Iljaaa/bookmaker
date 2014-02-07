@@ -23,7 +23,7 @@ class Email {
 
         $headers =  "From: ".$sender."\r\n".
                     "MIME-Version: 1.0\r\n".
-                    "Content-Type: text/plain; charset=UTF-8";
+                    "Content-Type: text/html; charset=UTF-8";
 
         return mail($to, $subject, $body, $headers);
     }
