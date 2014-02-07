@@ -62,11 +62,7 @@ class UsersController extends Controller
                     'user' => $user
                 ), true);
 
-                $headers = "MIME-Version: 1.0\r\n";
-                $headers .= "Content-type: text/html; charset=utf-8\r\n";
-                $headers .= "From: robot <noreply@".$_SERVER["HTTP_HOST"].">\r\n";
-
-                mail ($user->email, yii::t('user_registration', 'Registration complete'), $message, $headers);
+                Email::sendSystemEMail($user->email, yii::t('user_registration', 'Registration complete'), $message);
 
 				$url = $this->createUrl('/users/registrationcomplite');
 				$this->redirect($url);
@@ -212,11 +208,7 @@ class UsersController extends Controller
 
 		$message = $this->renderPartial('/emails/'.yii::app()->language.'/restore_password', $data, true);
 		
-		$headers = "MIME-Version: 1.0\r\n";
-		$headers .= "Content-type: text/html; charset=utf-8\r\n";
-		$headers .= "From: grablyBot <noreply@".$_SERVER["HTTP_HOST"].">\r\n";
-
-		mail ($user->email, yii::t('user_registration', 'Registration password'), $message, $headers);
+        Email::sendSystemEMail($user->email, yii::t('user_registration', 'Registration password'), $message);
 	}
 
 	/**

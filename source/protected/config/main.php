@@ -107,6 +107,7 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'vangel@yandex.ru',
+        'robotEmail'=>'admin@allavtovo.ru',
         'languages'=>array('ru'=>'Русский', 'ua'=>'Українська', 'en'=>'English'),
 	),
 );
