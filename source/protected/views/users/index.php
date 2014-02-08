@@ -43,6 +43,3 @@ $this->pageTitle = yii::t('user_personal', 'User details');
 <?=$this->renderPartial('/users/index/change_password', array ('changePasswordModel' => $changePasswordModel)) ?>
 <?=$this->renderPartial('/users/index/change_email', array ('changeEmailModel' => $changeEmailModel)) ?>
 
-
-<pre><?php var_dump ($user) ?></pre>
-

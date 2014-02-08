@@ -1,6 +1,5 @@
 <style>
     div.miniform {
-        border: solid 1px red;
     }
 
     div.miniform div {
