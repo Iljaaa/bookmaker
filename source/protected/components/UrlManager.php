@@ -14,6 +14,10 @@ class UrlManager extends CUrlManager
             $params['language']=Yii::app()->language;
         }
 
+        if (substr($route, 0, 1) == '/'){
+            $route = substr($route, 1);
+        }
+
         return '/'.$params['language'].'/'.$route;
         // return parent::createUrl($route, $params, $ampersand);
     }

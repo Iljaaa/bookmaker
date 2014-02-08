@@ -43,7 +43,7 @@ class User extends CActiveRecord
 
 		$u->login			= $model->name;
 		$u->email			= $model->email;
-		$u->password 		= WebUser::hashPassword($model->password);
+		$u->password 		= UserIdentity::hashPassword($model->password);
 
 		$u->status 			= 'new';
 		$u->last_activity 	= time();

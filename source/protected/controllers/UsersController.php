@@ -29,7 +29,7 @@ class UsersController extends Controller
 	{
 		return array(
 			array('deny',
-				'actions'=>array('adminlist'),
+				'actions'=>array('adminlist', 'index'),
 				// 'roles'=>array('admin'),
 				'users'=>array('?'),
 			),
@@ -156,7 +156,44 @@ class UsersController extends Controller
 	 */
 	public function actionIndex()
 	{
-		
+        if (yii::app()->user->isGuest) {
+            throw new Exception('Only auth users');
+        }
+
+        $user = yii::app()->user->getDbUser();
+
+        // password change
+        $changePasswordModel = new ChangePassword();
+        if (isset($_POST['ChangePassword'])){
+            $changePasswordModel->attributes = $_POST['ChangePassword'];
+            if ($changePasswordModel->validate()){
+                $user->setPassword($changePasswordModel->password);
+                yii::app()->user->setFlash('user', yii::t('user_personal', 'Password is changed'));
+                $this->refresh();
+            }
+        }
+
+        // email change
+        yii::app()->firephp->log ($_POST);
+        $changeEmailModel = new ChangeEmail();
+        if (isset($_POST['ChangeEmail'])){
+            $changeEmailModel->attributes = $_POST['ChangeEmail'];
+            if ($changeEmailModel->validate()){
+                $user->email = $changeEmailModel->email;
+                $user->save ();
+                yii::app()->user->setFlash('user', yii::t('user_personal', 'Email is changed'));
+                $this->refresh();
+            }
+        }
+
+
+        $data = array (
+            'user'                  => $user,
+            'changePasswordModel'   => $changePasswordModel,
+            'changeEmailModel'      => $changeEmailModel
+        );
+
+		$this->render ('index', $data);
 	}
 
 	/**
@@ -196,10 +233,13 @@ class UsersController extends Controller
 		));
 	}
 
-
-
-
-	protected function sendRestorePasswordEmail ($user, $newPassword)
+    /**
+     * Restore passowrd email
+     *
+     * @param $user
+     * @param $newPassword
+     */
+    protected function sendRestorePasswordEmail ($user, $newPassword)
 	{
 		$data = array (
 			'user'			=> $user,

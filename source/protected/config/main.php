@@ -61,7 +61,8 @@ return array(
 				'/<language:(ru|ua|en)>/match/<match:\d+>/delete'  => 'matches/delete',
 				'/<language:(ru|ua|en)>/match/<match:\d+>/result'   => 'matches/result',
 
-				'/<language:(ru|ua|en)>/mybets'                    => 'bets/user',
+                '/<language:(ru|ua|en)>/user'                       => 'users/index',
+				'/<language:(ru|ua|en)>/mybets'                     => 'bets/user',
 
 				'/<language:(ru|ua|en)>/<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'/<language:(ru|ua|en)>/<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',

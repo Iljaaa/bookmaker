@@ -55,7 +55,8 @@
 							<li><a href="<?=$this->createUrl('/users/registration') ?>">Registration</a></li>
 						<?php else : ?>
 							<li><a href="<?=$this->createUrl('/mybets') ?>">My Bets</a></li>
-							<li><a href="<?=$this->createUrl('/site/logout') ?>">Logout (<?=yii::app()->user->name ?>)</a></li>
+                            <li><a href="<?=$this->createUrl('/user/') ?>"><?=yii::t('mainmenu', 'Personal info') ?></a></li>
+							<li><a href="<?=$this->createUrl('/site/logout') ?>">Logout</a></li>
 
 							<?php $u = User::getAuthedUser(); ?>
 							<?php if ($u != null) : ?>
