@@ -25,13 +25,22 @@
 	<div class="g-row" style="height: 34px; margin-top: 15px;">
 		<div class="g-12">
 			<h1 style="width: 500px; float: left;"><?php echo CHtml::encode(Yii::app()->name); ?></h1>
-			<div style="float: right;">
-				<div style="padding: 0 0 0; text-align: right;">
-				Current time:<br />
-				CET : <b><?=date ('d.m.Y H:i'); ?></b><br />
-				MOS : <b><?=date ('d.m.Y H:i', (time()+(3*3600))); ?></b><br />
-				</div>
-			</div>
+            <div style="float: right;">
+                <div style="padding: 0 0 0; text-align: right;">
+                    Current time:<br />
+                    CET : <b><?=date ('d.m.Y H:i'); ?></b><br />
+                    MOS : <b><?=date ('d.m.Y H:i', (time()+(3*3600))); ?></b><br />
+                </div>
+            </div>
+            <div style="float: right; width: 50px;">
+                <div style="padding: 0 0 0; text-align: center;">
+                    <?php foreach (Yii::app()->params['languages'] as $l => $langName ) : ?>
+                        <?php if ($l == Yii::app()->language) continue; ?>
+                        <a href="<?=$this->createUrl('/', array('language' => $l)) ?>"><?=$l ?></a>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
 		</div>
 	</div>
 

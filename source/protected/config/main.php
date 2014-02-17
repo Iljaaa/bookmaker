@@ -48,23 +48,25 @@ return array(
 			'urlFormat'         =>'path',
 			'showScriptName'	=> false,
 			'rules'=>array(
-                '/<language:(ru|ua|en)>/champs'                    => 'champs/index',
-				'/<language:(ru|ua|en)>/champ/<id:\d+>'            => 'champs/view',
-				'/<language:(ru|ua|en)>/champ/<id:\d+>/edit'       => 'champs/edit',
+                '/<language:(ru|ua|en)>'                            => 'site/index',
 
-                '/<language:(ru|ua|en)>/teams'                     => 'teams/index',
-				'/<language:(ru|ua|en)>/team/<id:\d+>/edit'        => 'teams/edit',
+                '/<language:(ru|ua|en)>/champs'                     => 'champs/index',
+				'/<language:(ru|ua|en)>/champ/<id:\d+>'             => 'champs/view',
+				'/<language:(ru|ua|en)>/champ/<id:\d+>/edit'        => 'champs/edit',
+
+                '/<language:(ru|ua|en)>/teams'                      => 'teams/index',
+				'/<language:(ru|ua|en)>/team/<id:\d+>/edit'         => 'teams/edit',
 
                 '/<language:(ru|ua|en)>/matches'                    => 'matches/index',
-				'/<language:(ru|ua|en)>/match/<id:\d+>'            => 'matches/view',
-				'/<language:(ru|ua|en)>/match/<match:\d+>/bet'     => 'bets/add',
-				'/<language:(ru|ua|en)>/match/<match:\d+>/delete'  => 'matches/delete',
+				'/<language:(ru|ua|en)>/match/<id:\d+>'             => 'matches/view',
+				'/<language:(ru|ua|en)>/match/<match:\d+>/bet'      => 'bets/add',
+				'/<language:(ru|ua|en)>/match/<match:\d+>/delete'   => 'matches/delete',
 				'/<language:(ru|ua|en)>/match/<match:\d+>/result'   => 'matches/result',
 
                 '/<language:(ru|ua|en)>/user'                       => 'users/index',
 				'/<language:(ru|ua|en)>/mybets'                     => 'bets/user',
 
-				'/<language:(ru|ua|en)>/<controller:\w+>/<id:\d+>'=>'<controller>/view',
+				'/<language:(ru|ua|en)>/<controller:\w+>/<id:\d+>'  =>'<controller>/view',
 				'/<language:(ru|ua|en)>/<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'/<language:(ru|ua|en)>/<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
@@ -109,6 +111,6 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'vangel@yandex.ru',
         'robotEmail'=>'admin@allavtovo.ru',
-        'languages'=>array('ru'=>'Русский', 'ua'=>'Українська', 'en'=>'English'),
+        'languages'=>array('ru'=>'Русский', 'en'=>'English'),
 	),
 );
