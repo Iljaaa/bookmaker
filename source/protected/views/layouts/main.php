@@ -52,26 +52,30 @@
 						<a href="/">Goto main</a>
 					</div>
 					<ul class="f-nav">
-						<li><a href="<?=$this->createUrl('/teams') ?>">Teams</a></li>
-						<li><a href="<?=$this->createUrl('/champs') ?>">Champs</a></li>
-						<li><a href="<?=$this->createUrl('/matches') ?>">Mathes</a></li>
-						<li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
-						<li><a href="<?=$this->createUrl('/site/contact') ?>">Contact</a></li>
-						<li><a href="<?=$this->createUrl('/site/about') ?>">About</a></li>
-						<li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+						<li><a href="<?=$this->createUrl('/teams') ?>"><?=yii::t('mainmenu', 'Teams'); ?></a></li>
+						<li><a href="<?=$this->createUrl('/champs') ?>"><?=yii::t('mainmenu', 'Champs'); ?></a></li>
+						<li><a href="<?=$this->createUrl('/matches') ?>"><?=yii::t('mainmenu', 'Mathes'); ?></a></li>
+						<li><a href="<?=$this->createUrl('/site/contact') ?>"><?=yii::t('mainmenu', 'Contact'); ?></a></li>
+						<li><a href="<?=$this->createUrl('/site/about') ?>"><?=yii::t('mainmenu', 'About'); ?></a></li>
 						<?php if (Yii::app()->user->isGuest) : ?>
-							<li><a href="<?=$this->createUrl('/site/login') ?>">Login</a></li>
-							<li><a href="<?=$this->createUrl('/users/registration') ?>">Registration</a></li>
+							<li><a href="<?=$this->createUrl('/site/login') ?>"><?=yii::t('mainmenu', 'Login'); ?></a></li>
+							<li><a href="<?=$this->createUrl('/users/registration') ?>"><?=yii::t('mainmenu', 'Registration'); ?></a></li>
 						<?php else : ?>
-							<li><a href="<?=$this->createUrl('/mybets') ?>">My Bets</a></li>
+							<li><a href="<?=$this->createUrl('/mybets') ?>"><?=yii::t('mainmenu', 'My Bets'); ?></a></li>
                             <li><a href="<?=$this->createUrl('/user/') ?>"><?=yii::t('mainmenu', 'Personal info') ?></a></li>
-							<li><a href="<?=$this->createUrl('/site/logout') ?>">Logout</a></li>
+							<li><a href="<?=$this->createUrl('/site/logout') ?>"><?=yii::t('mainmenu', 'Logout'); ?></a></li>
 
 							<?php $u = User::getAuthedUser(); ?>
 							<?php if ($u != null) : ?>
-								<li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
-								<li><b>Balance : <span style="color: lightcoral;"><?=$u->balance ?>$</span></b></li>
-								<li><a href="<?=$this->createUrl('/site/updateuserbalance/'.$u->id) ?>">update balance</a></li>
+                                <li>&nbsp;&nbsp;&nbsp;</li>
+                                <li>
+                                    <b style="color: lightcoral;"><?=$u->balance ?>$</b>
+                                </li>
+                                <li>
+                                    <a href="<?=$this->createUrl('/site/updateuserbalance/'.$u->id) ?>">
+                                        <?=yii::t('mainmenu', 'update'); ?></a>
+                                </li>
+
 							<?php endif; ?>
 						<?php endif; ?>
 					</ul>
