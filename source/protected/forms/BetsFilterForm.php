@@ -23,10 +23,7 @@ class BetsFilterForm
 
         $this->begin = mktime(0, 0, 0, $mon, 1, $year);
 
-        yii::app()->firephp->log(date('d.m.Y H:i', $this->begin), 'begi');
-
         $this->finish = mktime(0, 0, 0, $mon+2, 1, $year);
-        yii::app()->firephp->log(date('d.m.Y H:i', $this->finish), '$this->finish');
 
         if ($this->finish > time()) {
             $this->finish = time();
