@@ -1,4 +1,35 @@
+<?php $this->breadcrumbs = array(
+    yii::t('user_personal', 'User details') => $this->createUrl('/user'),
+    yii::t('bets_user', 'My bets')
+); ?>
 <h1>My bets</h1>
+
+<?=CHtml::beginForm ('filterForm', 'get') ?>
+<?=Chtml::hiddenField('begin', $filterForm->begin) ?>
+<?=Chtml::hiddenField('begin', $filterForm->finish) ?>
+<?=Chtml::endForm() ?>
+
+
+<?php if ($firstBet != null) : ?>
+    First bet : <?=date('d.m.Y H:i', $firstBet->time) ?>
+<?php endif; ?>
+
+<div>
+    <?php if ($firstBet->time < $filterForm->begin) : ?>
+        <a href="<?=$this->createUrl('/mybets') ?>?m=<?=($filterForm->month - 1) ?>"><< <?=yii::t('bets_user', 'Earlier') ?></a>
+    <?php endif; ?>
+
+    <?=date('d.m.Y H:i', $filterForm->begin) ?> - <?=date('d.m.Y H:i', $filterForm->finish) ?>
+
+    <?php if ($filterForm->month < BetsFilterForm::getCurrentYear()) : ?>
+        <a href="<?=$this->createUrl('/mybets') ?>?m=<?=($filterForm->month + 1) ?>"><?=yii::t('bets_user', 'Later') ?> >></a>
+    <?php endif; ?>
+</div>
+
+
+
+
+
 
 <?php if (isset($bets) && count($bets) > 0) : ?>
 
@@ -7,6 +38,7 @@
 			<tr>
 				<th style="width: 50px;">#</th>
 				<th>Match</th>
+                <th style="width: 120px;">Bet time</th>
 				<th style="width: 300px;">Bet</th>
 				<th></th>
 			</tr>
@@ -55,6 +87,9 @@
 							<?=$matchTeam2->shortname ?>
 						<?php endif; ?>
 					</td>
+                    <td>
+                        <?=date('d.m.Y H:i', $b->time) ?>
+                    </td>
 					<td>
 						you bet <b><?=$b->cost ?>$</b> on <b><?=$betTeam->shortname ?></b>
 						<?php $balance = $b->getBalance() ?>

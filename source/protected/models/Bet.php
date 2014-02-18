@@ -26,14 +26,30 @@ class Bet extends CActiveRecord
 		return 'bets';
 	}
 
-
-	public static function findByUser ($userId)
+    /**
+     * Ставки пользователя
+     * @param $userId
+     * @param null $startTimeStamp
+     * @param null $endTimeStamp
+     * @return array|CActiveRecord|CActiveRecord[]|mixed|null
+     */
+    public static function findByUser ($userId, $startTimeStamp = 0, $endTimeStamp = 0)
 	{
 		$criteria = new CDbCriteria();
 		$criteria->addCondition('uid = :uid');
 		$criteria->params = array (
 			':uid'  => $userId
 		);
+
+        if ($startTimeStamp > 0) {
+            $criteria->addCondition('time > :starttime');
+            $criteria->params[':starttime'] = $startTimeStamp;
+        }
+
+        if ($endTimeStamp > 0) {
+            $criteria->addCondition('time < :endtime');
+            $criteria->params[':endtime'] = $endTimeStamp;
+        }
 
 		return static::model()->findAll($criteria);
 	}
@@ -61,6 +77,23 @@ class Bet extends CActiveRecord
 
 		return static::model()->findAll($criteria);
 	}
+
+    /**
+     * ПЕрвая ставка польователя
+     *
+     * @param $userId
+     * @return array|CActiveRecord|mixed|null
+     */
+    public static function findUserFirstBet ($userId){
+        $criteria = new CDbCriteria();
+        $criteria->order = 'id ASC';
+        $criteria->addCondition('canceltime IS NULL OR canceltime = 0');
+        $criteria->addCondition('uid = :uid');
+        $criteria->params = array (
+            ':uid'  => $userId,
+        );
+        return static::model()->find ($criteria);
+    }
 
 	/**
 	 * Находим ставку по пользователю матчу и команде

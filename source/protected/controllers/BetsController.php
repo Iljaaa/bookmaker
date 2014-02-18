@@ -136,19 +136,49 @@ class BetsController extends Controller
 	}*/
 
 
+
+    public function filters()
+    {
+        return array(
+            'accessControl',
+        );
+    }
+
+    public function accessRules()
+    {
+        return array(
+            array('deny',
+                'actions'=>array('adminlist', 'index', 'user'),
+                // 'roles'=>array('admin'),
+                'users'=>array('?'),
+            ),
+            /*
+            array('allow',
+                'actions'=>array('create', 'edit','delete'),
+                'users'=>array('@'),
+            ),*/
+        );
+    }
+
 	public function actionUser ()
 	{
-		if (Yii::app()->user->isGuest) {
-			$url = $this->createUrl('/site/login');
-			$this->redirect($url);
-		}
-
-		$username = Yii::app()->user->name;
-		$user = User::model()->findByLogin($username);
+		$user = yii::app()->user->getDbUser();
 		if ($user == null)  throw new Exception ('User not found');
 
+        $selectedMonth = yii::app()->request->getParam('m', BetsFilterForm::getCurrentYear());
+
+        $filterForm = new BetsFilterForm();
+        $filterForm->setMonth($selectedMonth);
+
+        $firstBet = $user->getFirstBet();
+        if ($firstBet != null && $firstBet->time > $filterForm->begin) {
+            $filterForm->begin =  $firstBet->time;
+        }
+
 		$data = array (
-			'bets'  => Bet::findByUser($user->id),
+			'bets'          => Bet::findByUser($user->id, $filterForm->begin, $filterForm->finish),
+            'filterForm'    => $filterForm,
+            'firstBet'      => $firstBet
 		);
 
 		$this->render("user", $data);

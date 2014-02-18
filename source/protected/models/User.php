@@ -87,12 +87,24 @@ class User extends CActiveRecord
 		return User::model()->find($crit);
 	}
 
-	public function getBetsCount () {
+    /**
+     * Количество ставок
+     * @return CDbDataReader|mixed|string
+     */
+    public function getBetsCount () {
 		$criteria = new CDbCriteria();
 		$criteria->addCondition('uid = :uid');
 		$criteria->params = array (':uid' => $this->id);
 		return Bet::model()->count($criteria);
 	}
+
+    /**
+     * ПЕрвая ставка игрока
+     * @return array|CActiveRecord|mixed|null
+     */
+    public function getFirstBet () {
+        return Bet::findUserFirstBet($this->id);
+    }
 
 	/**
 	 * Обновляем баланс пользователя
