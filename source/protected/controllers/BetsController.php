@@ -176,6 +176,7 @@ class BetsController extends Controller
         }
 
 		$data = array (
+            'payments'      => Balance::findByUser($user->id, $filterForm->begin, $filterForm->finish),
 			'bets'          => Bet::findByUser($user->id, $filterForm->begin, $filterForm->finish),
             'filterForm'    => $filterForm,
             'firstBet'      => $firstBet

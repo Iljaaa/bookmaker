@@ -33,13 +33,24 @@ class Balance extends CActiveRecord
 	}
 
 
-	public static function findByUser ($userId)
+	public static function findByUser ($userId, $startTimeStamp = 0, $endTimeStamp = 0)
 	{
 		$criteria = new CDbCriteria();
+        $criteria->addCondition('type = \'in\'');
 		$criteria->addCondition('uid = :uid');
 		$criteria->params = array (
 			':uid'  => $userId
 		);
+
+        if ($startTimeStamp > 0) {
+            $criteria->addCondition('time > :starttime');
+            $criteria->params[':starttime'] = $startTimeStamp;
+        }
+
+        if ($endTimeStamp > 0) {
+            $criteria->addCondition('time < :endtime');
+            $criteria->params[':endtime'] = $endTimeStamp;
+        }
 
 		return static::model()->findAll($criteria);
 	}

@@ -44,7 +44,17 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach ($bets as $b) :
+			<?php
+            $prevTime = 0;
+            foreach ($bets as $b) : ?>
+
+                <?php foreach ($payments as $p) : ?>
+                    <?php if ($p->time <= $b->time && $p->time >= $prevTime) : ?>
+                        <tr><td>aaa</td></tr>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+
+                <?php
 
 				$match = $b->getMatch();
 				if ($match == null) continue;
@@ -101,7 +111,9 @@
 						<a href="<?=$match->getUrl() ?>">match info
 					</td>
 				</tr>
-			<?php endforeach; ?>
+			<?php
+            $prevTime = $b->time;
+            endforeach; ?>
 		</tbody>
 	</table>
 
